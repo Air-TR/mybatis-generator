@@ -15,7 +15,6 @@
 
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
 
-
         <!-- TODO 
         <commentGenerator>
              <property name="suppressAllComments" value="true"/>
@@ -25,13 +24,10 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         
-        
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://114.55.86.125:3306/rujeper_dev?autoReconnect:true;useUnicode:true;characterEncoding:UTF-8"
-                        userId="dev"
-                        password="jlyc123456"/>
-
-        
+                        connectionURL="jdbc:mysql://localhost:3306/coalgas?autoReconnect:true;useUnicode:true;characterEncoding:UTF-8"
+                        userId="root"
+                        password="root"/>
 
         <!--生成数据表对应的model-->
         <javaModelGenerator targetProject="."
@@ -41,7 +37,6 @@
              
         </javaModelGenerator>
 
-
         <!-- SqlMap XML Files -->
         <sqlMapGenerator targetProject="."
                          targetPackage="mapper">
@@ -49,8 +44,7 @@
              
         </sqlMapGenerator>  
 
-
-       <!--  1，ANNOTATEDMAPPER：会生成使用Mapper接口+Annotation的方式创建（SQL生成在annotation中），不会生成对应的XML；
+       <!-- 1，ANNOTATEDMAPPER：会生成使用Mapper接口+Annotation的方式创建（SQL生成在annotation中），不会生成对应的XML；
             2，MIXEDMAPPER：使用混合配置，会生成Mapper接口，并适当添加合适的Annotation，但是XML会生成在XML中；
             3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；
              -->
@@ -64,8 +58,7 @@
         </javaClientGenerator>
         
         <!-- 一个个表来生成，避免出错 -->
-        <table schema="MySQL" tableName="up_shelf_method"
-                domainObjectName="UpShelfMethod"
+        <table schema="MySQL" tableName="order" domainObjectName="Order"
                 enableInsert = "true"
                 enableSelectByPrimaryKey = "true"
                 enableSelectByExample = "false"
