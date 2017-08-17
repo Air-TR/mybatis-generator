@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration
-        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
-        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+		PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-        <!--<classPathEntry
-            location="/Users/admin/Downloads/mysql-connector-java-5.1.40.jar"/>
-            -->
-   <classPathEntry
-            location="${user.home}/.m2/repository/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar"/>
-   <!-- 生成命令 -->
-   <!-- mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate -->
+
+	<!-- <classPathEntry location="/Users/admin/Downloads/mysql-connector-java-5.1.41.jar"/> -->
+	<classPathEntry location="${user.home}/.m2/repository/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar"/>
+	
+	<!-- 生成命令 -->
+	<!-- mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate -->
    
     <context id="ormgenerator" targetRuntime="MyBatis3">
 
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
 
-        <!-- TODO 
+        <!-- 
         <commentGenerator>
              <property name="suppressAllComments" value="true"/>
-        </commentGenerator>-->
-        <!-- 这里的type里写的是你的实现类的类全路径-->
+        </commentGenerator>
+         -->
+        <!-- 这里的type里写的是你的实现类的类全路径 -->
         <commentGenerator type="org.mybatis.generator.internal.MyDefaultCommentGenerator">
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
@@ -29,29 +29,22 @@
                         userId="root"
                         password="root"/>
 
-        <!--生成数据表对应的model-->
-        <javaModelGenerator targetProject="."
-                            targetPackage="com.entity">
+        <!-- 生成数据表对应的model -->
+        <javaModelGenerator targetProject="." targetPackage="com.entity">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
-             
         </javaModelGenerator>
 
         <!-- SqlMap XML Files -->
-        <sqlMapGenerator targetProject="."
-                         targetPackage="mapper">
+        <sqlMapGenerator targetProject="." targetPackage="mapper">
             <property name="enableSubPackages" value="true"/>
-             
         </sqlMapGenerator>  
 
-       <!-- 1，ANNOTATEDMAPPER：会生成使用Mapper接口+Annotation的方式创建（SQL生成在annotation中），不会生成对应的XML；
-            2，MIXEDMAPPER：使用混合配置，会生成Mapper接口，并适当添加合适的Annotation，但是XML会生成在XML中；
-            3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；
-             -->
+        <!-- 1，ANNOTATEDMAPPER：会生成使用Mapper接口+Annotation的方式创建（SQL生成在annotation中），不会生成对应的XML；
+             2，MIXEDMAPPER：使用混合配置，会生成Mapper接口，并适当添加合适的Annotation，但是XML会生成在XML中；
+             3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；-->
         <!-- 生成Mapper java文件-->
-        <javaClientGenerator type="ANNOTATEDMAPPER"
-                             targetProject="."
-                             targetPackage="com.dao">
+        <javaClientGenerator type="ANNOTATEDMAPPER" targetProject="." targetPackage="com.dao">
             <property name="enableSubPackages" value="true"/>
             <property name="exampleMethodVisibility" value="false"/>
             <!-- <property name="methodNameCalculator" value="com.kashuo.kop.webend.MethodNameGenerator" /> -->
@@ -68,8 +61,7 @@
                 enableCountByExample = "false"
                 enableUpdateByExample = "false"
                 selectByPrimaryKeyQueryId = "false"
-                selectByExampleQueryId = "false"
-            >
+                selectByExampleQueryId = "false" >
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>
