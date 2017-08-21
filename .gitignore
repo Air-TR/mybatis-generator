@@ -1,6 +1,6 @@
 /target/
 
 *.class
-pom.properties
-/.DS_Store
-/.gitignore.swp
+*.properties
+*.DS_Store
+*.gitignore.swp
