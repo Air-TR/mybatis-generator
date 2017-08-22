@@ -1,6 +1,4 @@
 log.txt
-*.html
-.DS_Store
 *.class
 *.log
 .classpath
@@ -12,5 +10,4 @@ test-classes/
 logs/
 .metadata/
 target
-*.DS_Store
 commit.js
