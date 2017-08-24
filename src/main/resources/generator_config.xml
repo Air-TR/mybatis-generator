@@ -25,9 +25,9 @@
         </commentGenerator>
         
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/coalgas?autoReconnect:true;useUnicode:true;characterEncoding:UTF-8"
-                        userId="root"
-                        password="root"/>
+                        connectionURL="jdbc:mysql://114.55.86.125:3306/cy_service_core?autoReconnect:true;useUnicode:true;characterEncoding:UTF-8"
+                        userId="dev"
+                        password="jlyc123456"/>
 
         <!-- 生成数据表对应的model -->
         <javaModelGenerator targetProject="." targetPackage="com.entity">
@@ -44,14 +44,14 @@
              2，MIXEDMAPPER：使用混合配置，会生成Mapper接口，并适当添加合适的Annotation，但是XML会生成在XML中；
              3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；-->
         <!-- 生成Mapper java文件-->
-        <javaClientGenerator type="ANNOTATEDMAPPER" targetProject="." targetPackage="com.dao">
+        <javaClientGenerator type="XMLMAPPER" targetProject="." targetPackage="com.dao">
             <property name="enableSubPackages" value="true"/>
             <property name="exampleMethodVisibility" value="false"/>
             <!-- <property name="methodNameCalculator" value="com.kashuo.kop.webend.MethodNameGenerator" /> -->
         </javaClientGenerator>
         
         <!-- 一个个表来生成，避免出错 -->
-        <table schema="MySQL" tableName="order" domainObjectName="Order"
+        <table schema="MySQL" tableName="tb_contract_template" domainObjectName="ContractTemplate"
                 enableInsert = "true"
                 enableSelectByPrimaryKey = "true"
                 enableSelectByExample = "false"
