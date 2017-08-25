@@ -20,7 +20,7 @@
         <sqlMapGenerator targetPackage="com.tr.dao.city" targetProject="mybatis-generator/src/main/java"/>
         <!-- 生成DAO的包名和位置 -->
         <javaClientGenerator targetPackage="com.tr.dao.city" targetProject="mybatis-generator/src/main/java" type="XMLMAPPER"/>
-        <!-- 要生成的那些表(更改tableName 和domainObjectName 即可，可复制多份同时生成) -->
+        <!-- 要生成的那些表（更改tableName 和domainObjectName 即可，可复制多份同时生成）-->
         <table tableName="city" domainObjectName="City" enableCountByExample="false" enableUpdateByExample="false"  
             enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
