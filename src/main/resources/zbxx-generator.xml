@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!-- 数据库驱动包位置 -->
+    <classPathEntry location="/Users/taorun/Dev/JavaSource/all/mysql-connector-java-5.1.40-bin.jar"/>
+    
+    <context id="context">
+    
+        <!-- 默认的 -->
+        <!-- <commentGenerator>
+            是否去除自动生成的注释
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator> -->
+        
+        <!-- 重写的，type里指定重写后的实现类的全路径（重写后的实现类会自动为实体类属性生成与表中字段相同的注释）-->
+        <commentGenerator type="org.mybatis.generator.internal.MyDefaultCommentGenerator">
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        
+        <!-- 数据库链接URL、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://114.55.86.125:3306/zbxx" userId="dev" password="jlyc123456"/>
+        
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="cn.zbxx" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成的映射文件报名和位置 -->
+        <!-- <sqlMapGenerator targetPackage="com.jlyc.cy.service.core.dao" targetProject="mybatis-generator/src/main/java"/> -->
+        <!-- 生成DAO的包名和位置 -->
+        <!-- <javaClientGenerator targetPackage="com.jlyc.cy.service.core.dao" targetProject="mybatis-generator/src/main/java" type="XMLMAPPER"/> -->
+        <!-- 要生成的那些表(更改tableName 和domainObjectName 即可，可复制多份同时生成) -->
+        <table tableName="gcp_visit_member_info" domainObjectName="VisitMemberInfo" enableCountByExample="false" enableUpdateByExample="false"  
+            enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+    </context>
+    
+</generatorConfiguration>

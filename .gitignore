@@ -11,3 +11,4 @@ logs/
 .metadata/
 target
 commit.js
+/.DS_Store

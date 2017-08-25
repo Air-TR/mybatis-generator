@@ -13,15 +13,15 @@
         </commentGenerator>
         <!-- 数据库链接URL、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-            connectionURL="jdbc:mysql://114.55.86.125:3306/cy_service_goods" userId="dev" password="jlyc123456"/>
+            connectionURL="jdbc:mysql://114.55.86.125:3306/cy_service_core" userId="dev" password="jlyc123456"/>
         <!-- 生成模型的包名和位置 -->
-        <javaModelGenerator targetPackage="com.jlyc.sm.po.version" targetProject="mybatis-generator/src/main/java"/>
+        <javaModelGenerator targetPackage="com.jlyc.cy.service.core.po" targetProject="mybatis-generator/src/main/java"/>
         <!-- 生成的映射文件报名和位置 -->
-        <sqlMapGenerator targetPackage="com.jlyc.sysmgr.dao.version" targetProject="mybatis-generator/src/main/java"/>
+        <sqlMapGenerator targetPackage="com.jlyc.cy.service.core.dao" targetProject="mybatis-generator/src/main/java"/>
         <!-- 生成DAO的包名和位置 -->
-        <javaClientGenerator targetPackage="com.jlyc.sysmgr.dao.version" targetProject="mybatis-generator/src/main/java" type="XMLMAPPER"/> 
+        <javaClientGenerator targetPackage="com.jlyc.cy.service.core.dao" targetProject="mybatis-generator/src/main/java" type="XMLMAPPER"/> 
         <!-- 要生成的那些表(更改tableName 和domainObjectName 即可，可复制多份同时生成) -->
-        <table tableName="tb_store" domainObjectName="Store" enableCountByExample="false" enableUpdateByExample="false"  
+        <table tableName="tb_contract_template" domainObjectName="ContractTemplate" enableCountByExample="false" enableUpdateByExample="false"  
             enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
     </context>

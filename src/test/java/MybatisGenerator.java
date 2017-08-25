@@ -18,7 +18,7 @@ public class MybatisGenerator {
 			List<String> warnings = new ArrayList<String>();
 			boolean overwrite = true;
 			ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-			InputStream is = classloader.getResourceAsStream("generator_config.xml");
+			InputStream is = classloader.getResourceAsStream("zbxx-generator.xml");
 			ConfigurationParser cp = new ConfigurationParser(warnings);
 			Configuration config = cp.parseConfiguration(is);
 			DefaultShellCallback callback = new DefaultShellCallback(overwrite);
