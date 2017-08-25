@@ -4,7 +4,7 @@
 <generatorConfiguration>
 
     <!-- 数据库驱动包位置 -->
-    <classPathEntry location="${user.home}/.m2/repository/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar"/>
+    <classPathEntry location="/Users/taorun/Dev/JavaSource/all/mysql-connector-java-5.1.40-bin.jar"/>
     
     <context id="context">
     
@@ -21,20 +21,20 @@
         
         <!-- 数据库链接URL、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-            connectionURL="jdbc:mysql://114.55.86.125:3306/zbxx" userId="dev" password="jlyc123456"/>
+            connectionURL="jdbc:mysql://114.55.86.125:3306/database" userId="root" password="root"/>
         
         <!-- 生成模型的包名和位置 -->
-        <javaModelGenerator targetPackage="cn.zbxx" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.tr.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- 生成的映射文件报名和位置 -->
-        <sqlMapGenerator targetPackage="com.jlyc.cy.service.core.dao" targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="com.tr.dao" targetProject="src/main/java"/>
         <!-- 生成DAO的包名和位置
         		 1.ANNOTATEDMAPPER：会生成使用Mapper接口+Annotation的方式创建（SQL生成在annotation中），不会生成对应的XML；
         		 2.MIXEDMAPPER：使用混合配置，会生成Mapper接口，并适当添加合适的Annotation，但是XML会生成在XML中；
         		 3.XMLMAPPER：会生成Mapper接口，接口完全依赖XML；-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.jlyc.cy.service.core.dao" targetProject="src/main/java"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.tr.dao" targetProject="src/main/java"/>
         
         <!-- 要生成的那些表（更改tableName 和domainObjectName 即可，可复制多份同时生成）-->
         <table tableName="gcp_visit_member_info" domainObjectName="VisitMemberInfo" enableCountByExample="false" enableUpdateByExample="false"  
