@@ -14,12 +14,12 @@
 
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
 
-        <!-- 
+        <!-- 默认的
         <commentGenerator>
              <property name="suppressAllComments" value="true"/>
         </commentGenerator>
          -->
-        <!-- 这里的type里写的是你的实现类的类全路径 -->
+        <!-- 重写的，type里指定重写后的实现类的全路径（重写后的实现类会自动为实体类属性生成与表中字段相同的注释）-->
         <commentGenerator type="org.mybatis.generator.internal.MyDefaultCommentGenerator">
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
@@ -65,5 +65,5 @@
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>
+    
 </generatorConfiguration>
-
